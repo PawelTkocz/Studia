@@ -1,0 +1,38 @@
+\documentclass[20pt]{article}
+\usepackage{amsmath}
+
+\title{Zadanie nr 3}
+\author{Paweł Tkocz 332168 }
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{}
+M(t) = $\frac{\lambda}{\lambda - t}$ , funkcja określona jedynie dla $t < \lambda$
+\section{}
+\begin{itemize}
+  \item Markov: $P(X \ge  \lambda a) \le \frac{1}{\lambda^2a}$
+  \item Chebyshev: $(X \ge  \lambda a) \le \frac{1}{(\lambda^2a-1)^2}$
+  \item  Chernoff: $(X \ge  \lambda a) \le e^{1-\lambda^2a} \lambda^2a$
+\end{itemize}
+
+\section{}
+
+\bgroup
+\def\arraystretch{1.5}%
+\begin{tabular}{|| c | c | c | c | c ||} 
+  \hline
+  a & wartość dokładna & Markov & Chebyshev & Chernoff \\ 
+  \hline
+  3 & $1.42516 \times 10^{-21}$ & $2.08333 \times 10^{-2}$ & $4.52694 \times 10^{-4}$ & $1.85952 \times 10^{-19}$ \\ 
+  \hline
+  4 & $1.60381 \times 10^{-28}$ & $1.5625 \times 10^{-2}$ & $2.51953 \times 10^{-4}$  & $2.79015 \times 10^{-26}$ \\ 
+  \hline
+  6 & $2.03109 \times 10^{-42}$ & $1.04167 \times 10^{-2}$ & $1.10803 \times 10^{-4}$ & $5.30024 \times 10^{-40}$ \\ 
+  \hline
+  10 & $3.25749 \times 10^{-70}$ & $6.25 \times 10^{-3}$ & $3.95554 \times 10^{-5}$ & $1.41676 \times 10^{-67}$ \\ 
+  \hline
+\end{tabular}
+
+\end{document}
