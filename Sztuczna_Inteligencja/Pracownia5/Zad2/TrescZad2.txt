@@ -1,0 +1,20 @@
+Kwadratura kwadratu
+Mamy 24 kwadraty o bokach 1, 2, 3, ..., 24. Należy napisać program, który rozmieszcza je na kwadratowej planszy o boku 70, w ten sposób, aby były spełnione następujące warunki:
+1.współrzędne lewego górnego rogu każdego kwadratu są liczbami całkowitymi
+2.każdy kwadrat w całości mieści się na planszy
+3.kwadraty nie nachodzą na siebie (ale mogą się stykać, rogami lub bokami)
+4.boki rozmieszczanych kwadratów są równoległe do odpowiednich boków planszy
+5.możliwie jak najmniejsza powierzchnia planszy rostaje niepokryta kwadratami
+
+Twój program powinien wypisywać proponowane rozwiązanie w następującym formacie:
+1.w pierwszym wierszu powinna być wypisana liczba niezapełnionych kwadracików
+2.po niej powinno być 70 wierszy po 70 znaków przedstawiających rozmieszczenie kwadratów
+3.każdy znak jest kropką (oznaczającą brak kwadratu) lub literą 'ABCDEFGHIJKLMNOPQRSTUVWX' ('A' oznacza przynależność do kwadratu o boku 1, 'B' -- o boku 2, itd)
+
+Punktacja za zadanie jest następująca (punkty się sumują):
+2p -- za rozwiązanie zgodne ze specyfikacją
+1p -- za 1000 lub mniej wolnych pól,
+1p -- za 800 lub mniej wolnych pól, czas działania programu kilkanaście sekund
+2 * 0.5 -- jeżeli Twój program wykorzystuje 1 lub 2 idee/algorytmy z wykładu (i potrafisz je wskazać)
+
+Dodatkowo dostajesz max(0, (200 - W) / 100), gdzie W jest liczbą wolnych pól. Dla uzyskania tego bonusu możesz pozwolić programowi działać dłużej (ale na tyle krótko, byś mógł go uruchomić przy prowadzącym pracownię)
