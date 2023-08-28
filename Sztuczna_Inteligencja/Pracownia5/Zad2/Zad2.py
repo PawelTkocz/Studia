@@ -5,11 +5,6 @@ for i in range(72):
     board[71][i] = 25
     board[i][71] = 25
 
-#463 new best bez 14,11,9,8
-#307 bez 10,9,8,6,5 dla braku zgody pomijania gdy s>10
-#167 jako trzeci nowy wynik dla braku zgody pomijania gdy s>9
-#123 jako szosty nowy wynik dla braku zgody pomijania gdy s>9
-#101 czyli 100 jako 11 wynik dla braku zgody pomijania gdy s>10
 corners = [[] for _ in range(25)]
 corners[24] = [(1, 1), (1, 70), (70, 70), (70, 1)]
 letters = 'ABCDEFGHIJKLMNOPQRSTUVWX'
@@ -17,13 +12,18 @@ letters = 'ABCDEFGHIJKLMNOPQRSTUVWX'
 goal = 100
 
 def print_board(b):
+    small_sq_added = False
     for i in range(1, 71, 1):
         expand = False
         prev = 0
         for j in range(1, 71, 1):
             v = b[i][j]
             if v==0 and not expand:
-                print(".", end="")
+                if not small_sq_added:
+                    print("A", end="")
+                    small_sq_added = True
+                else:
+                    print(".", end="")
             elif v==0 and expand:
                 print(letters[prev-1], end="")
             elif v!=0 and not expand:
@@ -149,31 +149,14 @@ def unplace_square(s, c):
         board[cy][cx+i*hor] = 0
         board[cy+(s-1)*ver][cx+i*hor] = 0
 
-def add_small_sq():
-    for i in range(1, 71, 1):
-        expand = False
-        prev = 0
-        for j in range(1, 71, 1):
-            v = board[i][j]
-            if v==0 and not expand:
-                board[i][j] = 1
-                return (i, j)
-            elif v!=0 and not expand:
-                expand = True
-                prev = v
-            elif v!=0 and expand:
-                if board[i][j+1] != prev:
-                    expand = False
 
 def solve(s):
     if s == 1:
-        #y, x = add_small_sq()
         n = count_frees()-1
         if n <= goal:
             print(n)
             print_board(board)
             exit()
-        #board[y][x] = 0
         return True
 
     chosen_any = False
