@@ -1,0 +1,35 @@
+button {
+	background: #A4A71E;
+	border-color: #000000;
+}
+
+label {
+  	font-family: "Georgia";
+	font-size: 20px;
+	color: black;
+}
+
+window{
+  	background: #A4A71E;
+  	font-family: "Georgia";
+}
+
+.zakoncz{
+	background: red; 
+    	color: white;
+	font-size: 16px;
+}
+
+.okienka{
+	background: #FFCF79;
+	border-radius: 0 20px 20px 20px;
+  	font-family: "Georgia";
+	font-size: 20px;
+	color: black;
+}
+
+.wybor{
+	background: #e69d17; 
+    	color: black;
+	font-size: 18px;	
+}
