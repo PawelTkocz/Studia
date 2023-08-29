@@ -1,0 +1,214 @@
+0;Dworzec Główny
+1;"Dworzec Główny, południe"
+2;Rondo Reagana
+3;Plac Dominikański (Galeria Dominikańska)
+4;Rynek
+5;Borowska (Uniw. Szpital Kliniczny)
+6;Dyrekcyjna / Borowska (Wroclavia)
+7;Powstańców Śląskich (Arkady Wrocławskie)
+8;Drobnera / Dubois
+9;Legnicka (Park Magnolia)
+10;Wita Stwosza / Szewska
+11;Szczęśliwa (Sky Tower)
+12;Plac Jana Pawła II (Akademia Muzyczna)
+13;Kazimierza Wielkiego (Helios)
+14;Powstańcow Śląskich / Aleja Hallera
+15;Zaporoska / Grabiszyńska
+16;al. Armii Krajowej / Borowska
+17;Grabiszyńska / Stalowa
+18;Wróblewskiego (Teki)
+19;Szewska / Kazimierza Wielkiego
+20;Kościuszki / Komuny Paryskiej / Zgodna
+21;Kamienna / Borowska (Aquapark)
+22;Traugutta / Pułaskiego
+23;Nowowiejska / Górnickiego
+24;al. Armii Krajowej / Bardzka
+25;Plac Uniwersytecki (UWr)
+26;pl. Orląt Lwowskich
+27;Fosa Miejska
+28;Hubska / Prudnicka
+29;Kościuszki / Pułaskiego
+30;Nowowiejska / Wyszyńskiego
+31;Walońska (Angel Poland Group)
+32;Aleja Hallera / Mielecka
+33;Piaskowa / św. Ducha
+34;Plac Powstańców Śląskich
+35;Krakowska / Leroy Merlin
+36;Janiszewskiego (PWr)
+37;Ślężna / Aleja Wiśniowa
+38;Powstańców Śląskich/Orla
+39;Pereca / Grabiszyńska
+40;Sienkiewicza / Wyszyńskiego
+41;Drobnera / Plac Bema
+42;Plac Legionów
+43;Nyska / Jesionowa
+44;Promenady Wrocławskie
+45;Świdnicka / Piłsudskiego (Hotel Scandic)
+46;Traugutta / Kościuszki
+47;Plac Grunwaldzki / Polaka
+48;Młodych Techników
+49;Wyszyńskiego / Szczytnicka
+50;Na Grobli (PWr - Geocentrum)
+51;Łukasiewicza / Smoluchowskiego (PWr)
+52;Komandorska / Kamienna
+53;Legnicka / Młodych Techników
+54;Plac Kościuszki (Renoma)
+55;Plac Świętego Macieja / Trzebnicka
+56;Legnicka / Wejherowska
+57;Kurkowa / Dubois
+58;Komandorska / Sanocka
+59;Ślężna / Skierniewicka
+60;al. Kochanowskiego / Kopernika
+61;Norwida / Wyspiańskiego (PWr)
+62;Fabryczna / Wagonowa
+63;Plac Strzegomski / Poznańska
+64;Aleja Kromera
+65;Grabiszyńska / Aleja Hallera
+66;Ślężna / Kamienna (Uniw. Ekonomiczny)
+67;Skarbowców / Wietrzna
+68;al. Karkonoska / Jeździecka
+69;Legnicka / Zachodnia
+70;Nowowiejska / Jedności Narodowej
+71;Grabiszyńska / Magazynierska (Corte Verona)
+72;Plac Grunwaldzki (DS Ołówek)
+73;Kamienna / Tomaszowska
+74;Plac Staszica
+75;Żelazna / Pereca
+76;Wróblewskiego (ZOO)
+77;Graniczna / Strzegomska
+78;Kołłątaja / Podwale
+79;Poniatowskiego / Oleśnicka
+80;Pilczycka / Kozanowska
+81;Racławicka / Rymarska
+82;Zwycięska / Agrestowa
+83;Tarnogajska / Klimasa
+84;Żmigrodzka / Broniewskiego
+85;Jagodzińska / Buforowa
+86;Przyjaźni / Karkonoska
+87;Jedności Narodowej / Wyszyńskiego
+88;Grota-Roweckiego / Parafialna
+89;Zaporoska / Gajowicka
+90;Śrubowa / Strzegomska
+91;Krzywoustego / Korona
+92;Gliniana / Gajowa
+93;Stacyjna (Dworzec Mikołajów)
+94;Zwycięska / Ołtaszyńska
+95;Popowice
+96;Plac Powstańców Warszawy (Muzeum Narodowe)
+97;Żeromskiego / Kluczborska
+98;Lotnicza / Bajana
+99;Na Ostatnim Groszu
+100;Sienkiewicza / Piastowska
+101;Lotnicza / Na Ostatnim Groszu
+102;Strzegomska / Estońska
+103;Krucza / Mielecka / Stalowa
+104;al. Brücknera / Kwidzyńska
+105;Zaporoska / Wielka / Krucza
+106;Marca Polo (Olimpia Port)
+107;Mickiewicza / pętla tramwajowa
+108;Świeradowska (Ferio Gaj )
+109;Żeromskiego / Daszyńskiego
+110;pl. Powstańców Wielkopolskich
+111;Reymonta / Kleczkowska
+112;Otyńska
+113;Rogowska / Zemska
+114;"Grochowa / Jemiołowa,"
+115;Centrum Handlowe Auchan Bielany
+116;Czekoladowa / Wałbrzyska
+117;Kozanowska / Pilczycka
+118;Przyjaźni
+119;Olszewskiego / Spółdzielcza
+120;Piłsudskiego 13 od Jump Hall
+121;Wałbrzyska - pętla tramwajowa
+122;Solskiego / al. Piastów
+123;Kamieńskiego / Jutrosińska
+124;Świeradowska / Krynicka
+125;Krzycka / Aleja Karkonoska (Park Południowy)
+126;Drzewieckiego / Dedala
+127;Klecińska / Duńska
+128;Berenta / Kasprowicza
+129;Partyzantów / Okrzei
+130;Strzegomska / Rogowska
+131;Grota-Roweckiego/Iwaszkiewicza
+132;Kozanowska/Pałucka
+133;Bardzka (cmentarz)
+134;Koszarowa / UWr
+135;Kamieńskiego
+136;Bacciarellego / pętla autobusowa
+137;Obornicka / Bałtycka
+138;Rogowska/Sukielicka
+139;Krzywoustego - Rynek Psie Pole
+140;Gazowa / Międzyleska
+141;Klecińska (Wrocław Grabiszyn)
+142;Konduktorska
+143;al. Armii Krajowej / Tarnogajska
+144;Kutrzeby / Hubala
+145;Zachodnia / Poznańska
+146;Sołtysowicka / Redycka
+147;Wojanowska / Arbuzowa
+148;Piławska
+149;Pilczycka / Koszykarska
+150;Bałtycka / Żmigrodzka
+151;Żmigrodzka / Marino
+152;Aleja Bielany
+153;Kraszewskiego / Trzebnicka
+154;al. Kochanowskiego / Śniadeckich
+155;Rakowiecka
+156;Mińska / Stanisławowska
+157;Joliot-Curie (Uwr)
+158;Bezpieczna / Obornicka
+159;Mościckiego (stacja kolejowa)
+160;Radeckiego / Marcinkowskiego (Uniw. Medyczny - CNIM)
+161;Buforowa - Vivaldiego
+162;Bacciarellego
+163;Tyrmanda / Trawowa
+164;Traktatowa (przystanek kolejowy)
+165;Gorlicka/Stanety
+166;Opolska / pętla tramwajowa
+167;Lotnicza / Metalowców
+168;Bezpieczna/Jugosławiańska
+169;Hermanowska / Kołobrzeska
+170;Kiełczowska
+171;Oporów (pętla tramwajowa)
+172;Poleska / Litewska
+173;Gorlicka / Litewska
+174;Pilczycka (Stadion Miejski)
+175;"Olszewskiego, pętla tramwajowa"
+176;Karwińska / Opolska
+177;Ślężna / pętla tramwajowa
+178;.RELOKACYJNA
+179;Tyrmanda / Mińska
+180;Zatorska / Królewska - pętla MPK
+181;"Paprotna / Obornicka, zajezdnia MPK"
+182;al. Poprzeczna / stacja kolejowa
+183;Żernicka
+184;Stadion Olimpijski
+185;Strachocińska / Wieśniacza
+186;"Kosmonautów / Fieldorfa, szpital wojewódzki"
+187;Semaforowa
+188;al. Jana III Sobieskiego / stacja kolejowa
+189;Opolska / Siemianowicka
+190;Mościckiego / Chińska
+191;Stabłowicka / Główna
+192;Bystrzycka / Idzikowskiego
+193;Wilanowska
+194;Hallera / Odkrywców
+195;Mrągowska / Rolna
+196;Waniliowa / Cynamonowa
+197;Osobowicka - pętla tramwajowa
+198;Boguszowska / Kosmonautów
+199;Prochowicka / Dolnobrzeska
+200;Leśnica - pętla tramwajowa
+201;Osobowicka / Ostrowska
+202;3M
+203;"Wrocław Stadion, stacja kolejowa"
+204;Kowalska/Lechitów
+205;Miłoszycka / Swojczycka
+206;Maślicka / Stodolna
+207;Kosmonautów / Glinianki / WUWA2
+208;Kwidzyńska pętla
+209;Średzka / Dolnobrzeska
+210;Stabłowicka
+211;Lubelska/Łukowska
+212;"Wrocław Leśnica, stacja kolejowa"
+213;Okulickiego

@@ -1,0 +1,102 @@
+###############################################################
+#-------------------------------------------------------------#
+#--------------Wstęp do programowania w języku C--------------#
+#-------------------------------------------------------------#
+#-----------------------Robert Ferens-------------------------#
+#--------------------------Lista-2----------------------------#
+#------------------------27.10.2021r.-------------------------#
+#-------------------------------------------------------------#
+###############################################################
+
+----------------------Zadanie-1-(10/5pkt)----------------------
+
+Prowadzący złośliwie ukrył drugie zadanie za pomocą pewnego 
+szyfru. Napisz program symulujący maszynę deszyfrującą,
+odszyfruj kod i zapisz do pliku. Skorzystaj z
+systemowych przekierowań wejścia i wyjścia (>,<)
+t.j.:
+Linux:		./program <input.txt >output.txt
+Windows:	.\program.exe <input.txt >output.txt
+
+Aby odszyfrować zakodowany ciąg należy skorzystać z maszyny
+składającej się z 4 bębnów ze znakami. Każdy bęben zawiera na
+sobie ciąg następujących po sobie znaków ASCII:
+
+Pierszy [Spacja]-'?'
+Drugi '@'-'_'
+Trzeci '`'-'~'
+Czwarty a-z
+
+Początkowe ustawienie bębnów maszyny to:
+'$Umo' a początkowy bęben to bęben pierwszy.
+
+Można na maszynie wykonać 4 operacje:
+'.' - wypisz aktualny znak na aktualnym bębnie
+'>' - zmień aktywny bęben na jeden na prawo(następny), 
+      lub na pierwszy gdy jesteś na ostatnim
+'<' - zmień aktywny bęben na jeden na lewo(poprzedni),
+      lub na ostatni gdy aktywny był pierwszy
+'^' - obróć bęben w góre - widnieje na nim następny w ascii 
+      znak, lub pierwszy znak gdy był ostatni
+'v' - obróć bęben w dół - widnieje na nim poprzedni w ascii 
+      znak, lub ostatni znak gdy przed chwilą był pierwszy
+
+PS. tak - kody a-z się powtarzają na dwóch bębnach
+PS2. Nowe linie drukować bez zmian
+
+### EDIT 28.10 ###
+W zadanie wkradł się błąd - zakres trzeciego bębna jest do '~'+1 (DEL) ale znak ten nie jest używany
+
+-----------------------Zadanie-2-(10pkt)-----------------------
+
+## ODSZYFROWANE: ##
+
+Napisz program o nastepujacym interfejsie:
+
+prog -c [s]
+prog -d [s]
+prog -x [s]
+[s] - to pewien string niebialych znakow
+
+wywolanie z -c (count) powoduje policzenie wszystkich znakow
+z [s] zawierajacych sie na standardowym wejsciu (do EOF),
+wypisanie ich liczby na standardowe wyjscie i
+zakonczenie programu
+
+wywolanie z -d (delete) powoduje kopiowanie standardowego
+wejscia na wyjscie bez znakow z [s], zakonczenie na EOF.
+
+wywolanie z -x (extract) powoduje kopiowanie standardowego
+wejscia na wyjscie wylacznie ze znakami z [s], zakonczenie
+na EOF.
+
+*Linux wysyla EOF na CTRL+D, Windows na CTRL+Z
+**procz tego jest mozliwosc uzycia przekierowania '<<'
+*** W code blocks, ustawianie argumentow programu to project->set programs' arguments
+###########################
+>vvvvvvv.>vvvvvvvvvvvv.^^^^^^^^^^^^^^^.>vvvvvv.<^^^.>vvvvvvvvv.>vvvv.<<vvv.>vvvvvvvv.<v.>vvvvvvvvvvv.^^^^^^^^^^^.<vvvvvvvvvvvvvv.^^^^^^^^^^^^.<<.<vvv.>.<<^.>^^^^^^^^^^^^.vvvvvvvv.^.^^^^^^^^^^^.<^^.>vvvvvvvvvv.<vvvvvv.vvvvvvvvv.^^.vvvvvvvvvv.vvvvvvvvvvvv.<<.<vvvvvvvvvvvv.<^.^^^^^^.vvvvvvvvvvvvvvv.>^^^^^^^^^.vvvvvvvvvvvv.v.<^^^^^.>vvvvvvvvvvvv.vvvvvvvvvv.vvvv.>vvvvvv.
+
+<^^^^^^^^^^^.^^.vvv.<vvv.<<^^^^^^.^^^^^^^^^^^^^.<<vvvv.<<vvvvvvvvvvvvv.>^^^^^^^^^^^^^.<<^^^^.<<^^.
+>^^^^^^^^^^^^^.>v.<v.>vvvvvvvvvvv.>.^^^^^^^^^^^^^.<vvv.>vvvvvvvvvvvvv.>vv.<<vvvvvvvvvvv.<<^^.
+<<vvv.^^.vvv.vvvvvvvv.>.^^^^^^^^^^^^^.<vvvvvvvvv.>vvvvvvvvvvvvv.>vv.<<vvvvv.<<^^.
+vv.>^^^^.<^^.<.^^^^^^^^^^^^^.vvvvvvvvvvvvv.<^.<vvvv.<<.<<^.vvvvvvvvvvv.>^^^.^^^^^^^^^^^^.vvvv.<^^^^^^^^^.<<.<vvvvvvvvvvvv.<^^^^^^.>v.<vvvvvvvvvvv.^^^^^.vvvvvvv.<<.<vvvv.<^^.>vvvvvvvvv.vvv.^^^^^^^.<vvvvvvvv.>^^^.<vvvvvvvv.>vvvvvvvvv.<^^^^^^^^^^^^^^^.<<.<vvv.<^^^^^^.>^.^^^^^^^^^^.<^.>^^^^^^^^^^^^.
+
+.^^.vv.vvvvvvvv.vvv.<vvvvvvvvvvvvvv.^^^^^^^^^^^^^.>vvv.<vvvvvvvvv.<<.<<vvvvvvvvvvv.<<.^^^^^^^^^^^^^.<vvvvvv.>vvvvvvvvvvvvv.^^^^^^^^.<<^^^^^^^^^.^^^^^^^^^^^^.>vvvvvvvv.<v.^^^^^^.<<^.vvvvvvvvv.<<vvvv.>vvvvvv.^^^^^^^^.vvvvvvvv.<vvvvvvvvvvvv.vvvvvvvvvvvvvvv.>vvvvv.vvvvv.>.<<vvvvv.>^^^^^^^^^^.<vvvv.vvv.vvvvvv.vvvvvvvvv.>vvvvvvvvvv.^^^^^^^^^.vvvvv.<^^^^^^^^^^^.<<.<<vvvvvvvvvvvvvv.>^^^^^^^^^^.^^^^^^^.<^^.vvvvvv.>vvvvvv.<vvvvvvvv.>vvvvvvvvvvv.vvvvvv.^^^^^.>.<vvvvvvvv.<^^^.>^.^^^^^^^^^^.^^^^.<^^^^^^^^^.
+^^^.<<.>vv.<<^^^^.<<^^.<.<<.>^^^^^^^^.vvvv.<^^^^^^^^^^^^^^^.vvvv.>vvvvv.<vvvv.^^^^^^^^^.>^^^^^^^^^.^^.vvvv.<vvvvvvv.^^^^^.<<.<vvvvvv.vvvvvvvvvv.vvvv.>.<<^^^^^^.>vvvv.>.<<^^^^^.^.>.<vvvvvv.>^^^.<vvvvvvvvvvvvv.vvvvvvvvvvvvvvv.vvvvvvvvvvvvvv.>^^^^^^^^^^^.^^^^^^^^.<vvvvvvvvvvv.>vvvvvvvvvv.>.<^^^^^^^^^^.<^^^^^^^^^^^^.^^^^^.^^^^^^^^^.>^^^^^^.^^^^^^.^^^^^^^^^^^^.>.^^^^^^^^.<^^^^^^^^^.^^^^^^^^^^^.>vvvvvvvv.>^^^^^^^^.^^^^^^^^^^.vvvvvvvvv.<^^^^^^^^^.^^^.
+<<^^^^.>^^^^^^^^^^.vvvvvvvvv.<vvvvvvvvvvvvvv.>^^^.<vvvvvvvv.^^^^^^^^^^^^^.vvvvv.vvvv.<<vvvvvvvvvvvv.<vvvvvvvvvv.<vv.>v.>.<<^^^^^^^^^.vvv.vvvvvv.vvvvvvvvv.^^^^^^^^.>vvvvvvvvv.>.<vvvvvvvvvvv.<v.<<.<^^^^^.<vvvvvvvvvvvvv.>^^^^^^^^.<vvvvvv.>^^^.vvv.vvvvvvvvv.<vvvvvvvvvv.^^^^^^^^^^^.^^^^^^^^.>vvvvvvvvvvvvv.>.<<.>vvvvvv.<vvvvvvvvvvvvv.^^^^^^^^^.vvvvvvvvvvvvvvvv.>^^^^^^^^^^.<^^.<<.<<^^^^.
+>vvvvvvvvv.<vvvvvvvv.>^^^^^^^^^^^.<^^^^^^^^^^^^^^.v.>vvvvvvvv.vvv.^^^^^.<.vvvvv.vvvv.<<.<<^^^^^^^^^^^.>vvvvvvvvvvvvv.vvv.vvvvvvvv.^^^^^^^^^^^.<vvvvvvvvvvvvvvv.^^^^^^^^^^^^.^^^^^^^^.
+
+^^.^^.>^^^^^.vvvvvvvv.<vvvvvvvvvvvvv.vvvvvvvvvvv.^^^^^^^^^^^^^.vvvvv.>vvvvvvvvvv.>.<vvvvv.>.^^^^^^^^^^^^^.<^^^^.>vvvvvvvvvvvvv.^^^^^^^^.<.<vvvv.>^^^^^^^^.<.>^^^^^^^^.^^^^^^^^^^^.>^.vvvvvvvvv.<<^^^^^^^^^^^.v.^^^^^^^^.vvvvvvvv.vvvvvvvvvvv.>vvvvvvvvvv.<^^^^^^.>^^^^^^^^^^.>.<<^.>^^^^^^^^^^.^.<vv.>v.^^^^^^^^.<vvvvvvvv.>vvvvvvvvv.<^^^^^^^^.>vvvvvvvvv.>.<vvvvvvvvvvvv.^.^^^^^^^.vvvvvvvvvvvvv.<vvvvv.vvv.vvvvvvvvvvvvvvv.>vvvvvvvvvv.^^^^^^^^^^^.^^^^^^^^.<vvvvvvvvvvvvv.^^.>vvvvvvvv.
+<vvvvvvvvvvvvvvvv.^^^^^^^^^^^^^^.>vvvvv.<^^^^^^^^^^^^^^.vvvvvvvvvvvvvvvv.^^^^^^.vvvvvvvv.<<.<^^^^.<.<<.<^^^^^^^^^.<vvvvvvvv.vvvvvvvvvvvvvvv.^^^^^^^^^.vvvvvvvvvvvvvvvv.^^^^^^.>^^^^^^^^.>.<<vvvvvvv.^^^.vvvvvvvvvvv.<<.<vvvvv.vvvvvvvvvvvv.vvvvvvvvvvvvv.^^^^^^^^^^.<vvvvvvvvvvv.^^^^^^^^.<<.<vvvvvvvvvvv.>.>vvvvvvvvvvv.<<vvvvvvv.<<^^.<^^^^^^^^^^^^.vvvvvvvvvvvv.<^^^^^^^.^.^^^^^^^^^^.<vvvvvvvv.>^^^.vvvvvvvvvvv.<^^^^^^^^^^^.>^^.^^^^^^^^^.<^^^^^^^^^^^^^^^.>vvvvvvvvv.>.<<^^^^^.>vvvv.>.>^^^^^^^^.^^^^^^^^^^.vvvvvvvvv.<^^^^^^^^^^^^^^.
+
+<<^^^^^^^^^.>vv.vv.<vvvvvvvv.>vvvvvvvvvvv.<vvvvvvvvvvvvvv.>^^.vvvvv.<^^^^.<<vvvvvvvvvvvvvv.<vvvvvvvvv.>.^^^^^^^^^^^^^.<vv.>vvvvvvvvvvvvv.^^^^^^^^.<^^^^^^^.<vvvvvvvvvvvvv.vvvv.>vvvvvvvvvvvvv.<^^^^^^^^^^^^^.>^^^^^^^^^^^.<vvvvvvvvvvvvv.<<^.vvvvvvvvv.<<vvvv.v.>vvvvvv.<.>^^^^^^^.<^^^^^^.vvvvvvvvvvv.vvvvv.<<.<^^^^^^^.^^^^.^.<^^^^.^^^^^^.>^^^^^^^.^^^^.vvvvvvvvvvvvv.vvvvv.<vvvvvvvvvv.<<.<^^^^^^^^^^.<^^^^^^^^^^^^^^^.>^^^^^^^^.vvvvvvvvvvvvv.vvvvvvvvvv.<^^^^^^^^^^^^^.>vvvvvvvvvvvv.<^^^.>vvv.<vvvvvvvvvvvvv.^^^^^^^^^^^^^^.^^.>.
+<vvvvvvvvvvvvvvvv.>vvvvvvvvvv.<vvvvvvvvvvvvv.>vvvvvvvvvvvv.<vvvvvvv.>vvvvvvvvvv.vvvvvvvv.>.<vvvvvvvvvvvvv.<vv.<<.<<vvvvvvvvvv.^^.vvvvvvvvvvvvvvv.^^^^^^^^^.vvvvvvvvvvvvvvvv.>vvvvv.<^^.<<.<vvvvvvvvvvvv.^^.vvvvvvvvvvvvv.<vvvv.>vvvvvvvvv.vvv.vvvvvvvvvvvv.vvvvv.<^^^^.<<.<vvvvvvvvv.<.<<.<<vvvvvvvvvvv.vvvvvvvvvvvv.>^.^^^^^^^^^^.<vvvvvvvvvvvvv.^^^^^^^^^^^^.vvvv.<<.<vvvvvvvvvvv.>.>vvvvvvvvvvv.>^^^^^^^^^^.<^^.<^^^^^^^^^^^^.vvvvvvvvvvvv.<.^.^^^^^^^^^^.^^^^.v.<vvvvvvvvvvvvvvvv.vvvvvvvvv.^^^^^^^^^^^.^^^^^^^^^.>vvvvv.<vvvvvvvvv.
+>^^^^^.vvvvvvvvvvvvv.>.>^^^^^^^^.^^^^^^^^^^.vvvvvvvvv.<^^^^^^^^^^^^^^.
+
+vvvv.>^^^^^^.<<^^^^^^^^.^^^^^.<vvvvvvvvvvvvvvvv.^^^.<<vvvvvvvvvv.<^^^^^^^^^.^^.<vvvvv.^^^^^^.vvvvvvvvvvvvv.>^^.>.>vvvvvvv.^^^^^^^^^^.vvvvvvvvv.<.<<^^.>.>.>vvv.vvvvvvvvvvvvvvv.vv.vvvvvv.<^^^^^^^^^^^.>vvvvvvvv.<^.vvvvvvvvvvvv.>vvvvvvvvvvvvv.>vvvvv.>vvvvvvvvvvvvv.vvvvvvvvvv.<^^^^^^.^^^^^^^^.>vvvvvvvvvvv.>.<vvvvv.vvvvvvvvvvvvv.>.>^^^^^^^^^^^^.vvvvvvvvvvvvvvv.vv.vvvvvv.<^^^^^^^^^^^.>^^^^^^^^^^^^^^.
+<v..<vvvvvvvvvvv.^^.vvv.vvvvvvvvvvvv.vvv.>vvvvvvvvvv.<vvvvvv.^^^^^^^^^^^.<vvvvvvvvvvvvvvvv.>^^^^^^^^^^.>.<<^^^.>vvvvvvvvvv.<^^^^^^^^^.^.<<.<^^^^^^^^.^^.^^^^^^^^^^^.^^^^^^^^^^^^.vvv.vvvvvvvvvvvv.vvvvvvvv.<v.vvvvvvvvvvvvvvvv.<<.<<vvvvvvvvvvvvvv.>^^^^^^^^^^^.v.^^^^.^^^^^^.vvvvvvvv.>.<<vvvvv.>vvvvvvvvv.^^^^^^^^.^^^^^.<vvvvv.vv.vvvv.>vvvvvvvvvvvvv.vvv.^^^^^^^^.^^^^.<^^^^^^^^^.vvvvv.>.>.^^^^^^^.vvvvvvvvvvv..^^^^^^^^^^^.
+^^^...vvvvvvvvvv.>vvv.<.<<vvvvvv.^^^^^^^^^^^^.vvvvvvvvvvv.>^^^^.>.<vvv.^^^^^^^^^^.^^^.<v.^^^^^^^^.>^^^^.>^^^^^^^^^^^^.vvvvvvvvvvvv.<<^^^^^^^^^^.vv.^.>^^^^^^^^.vvvv.<vvvvvvvvvvv.>^^^^.<^^^^^.>^^^^^^^^.<vvvvvvvvv.<<.<vvvvvvvv.vvvvvvvvv.<^^.^^^^^^^^^^^^^^.vvvvvvvv.>vvvvvvvvvvvvv.^^^^^^^^^.^^^^^^.vvvvv.^^^^^^^^.>.<<^^^.>vvvvv.vvv.vvvvvvvv.^^^^^^^^^^^.<vvvvvvvvvvvvvvv.^^^^^^^^^^^^.^^^^^^^^.<<.<^^.vvvvv.>.<^.^^.vvv.<vvvvvvvvvvv.>vvvvvvvvvv.vv.<^^^^^^^^^^.<<^^^^^^^^^^^^^.vvvvvvvvvvvvvvv.<<v.>^^.vvvvvvvvvvv.>^^.<<vvv.^^.vvv.vvvvvvvv.^^^^^^^^^^^.^^^^^^^^^^^^^^^.>vvvvvvv.<vvvvvvvvvvvvvv.<<^^^^^^^.vvvvvvv.<vvvvvvvvvvvv.<v.>^^^^^^.<^^^.>^^^^^^.vvvvvvvv.^^^^^^^^^.<v.>^^^^^.
+
+-----------------------Zadanie-3-(10pkt)-----------------------
+
+Dostępne na sprawdzaczce w SKOS.
