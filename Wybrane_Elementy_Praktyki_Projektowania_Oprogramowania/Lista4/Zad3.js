@@ -12,7 +12,8 @@ var Worker = function(name, surname, age) {
 }
 
 //Worker.prototype = Object.create( Person.prototype );
-Worker.prototype = Person.prototype
+//Worker.prototype = Person.prototype
+Worker.prototype = new Person();
 
 Worker.prototype.say = function() {
     // "wywołanie metody z klasy bazowej"
@@ -45,5 +46,12 @@ starej wersji funkcji say() przez nową również w Person.prototype. Doprowadzi
 będzie w nieskończoność wywoływała samą siebie.
 */
 /*
-
+Jaka jest wada rozwiązania postaci:
+Worker.prototype = new Person();
+Rozwiązanie to działa w przeciwieństwie do poprzedniej próby. Główną jego wadą jest jednak niepotrzebne tworzenie
+całego obiektu Person() - celem naszego rozwiązania jest aby Worker.prototype miał dostep do metod i parametrów
+zdefiniowanych w Person.prototype. Wykonanie new Person() utworzy nową klasę Person, a więc rzeczywiście uzyskamy
+dostep do Person.prototype, ale utworzenie nowego obiektu Person utworzy również wszystkie parametry tej klasy.
+Jeśli więc obiekt miałby bardzo dużo parametrów to tworzenie utworzenie klasy Person zajmie znacznie więcej
+pamięci niż utworzenie jedynie klasy Person.prototype.
 */
