@@ -1,3 +1,4 @@
+//https://www.codewars.com/kata/5648b12ce68d9daa6b000099
 fn number(bus_stops:&[(i32,i32)]) -> i32 {
     bus_stops.iter()
              .map(|s| s.0 - s.1)

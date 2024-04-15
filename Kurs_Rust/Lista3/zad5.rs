@@ -1,3 +1,4 @@
+//https://www.codewars.com/kata/5511b2f550906349a70004e1
 fn nth_in_cycle(cycle: &str, n: u32) -> i32{
     cycle.chars()
          .nth(n as usize)

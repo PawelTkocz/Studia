@@ -1,3 +1,4 @@
+//https://www.codewars.com/kata/56f3a1e899b386da78000732
 fn part_list(arr: Vec<&str>) -> String {
     let mut res = vec![];
     for i in 1..arr.len(){

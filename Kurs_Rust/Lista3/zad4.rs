@@ -1,3 +1,4 @@
+//https://www.codewars.com/kata/56e6705b715e72fef0000647
 fn get_char(x: i32, y: i32, n: i32) -> String{
     if x == n{
         return "\n".to_string();

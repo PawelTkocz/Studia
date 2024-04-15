@@ -1,3 +1,4 @@
+//https://www.codewars.com/kata/6512b3775bf8500baea77663
 fn gimme_the_letters(sp: &str) -> String {
     let first = sp.chars().next().unwrap();
     let last = sp.chars().last().unwrap();

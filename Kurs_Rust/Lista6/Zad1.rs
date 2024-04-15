@@ -1,3 +1,4 @@
+//https://www.codewars.com/kata/roboscript-number-2-implement-the-rs1-specification
 use std::{ops::Rem, cmp::{min, max}};
 
 #[derive(PartialEq, Debug, Clone, Copy)]

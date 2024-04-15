@@ -1,3 +1,4 @@
+//https://www.codewars.com/kata/592e830e043b99888600002d
 fn encode(msg: String, n: i32) -> Vec<i32> {
     let digits = n.to_string()
                   .chars()

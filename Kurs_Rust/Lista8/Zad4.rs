@@ -1,3 +1,4 @@
+//https://www.codewars.com/kata/57591ef494aba64d14000526
 fn john(n: i32) -> Vec<i32> {
     let mut a: Vec<i32> = vec![1];
     let mut j: Vec<i32> = vec![0];
