@@ -1,3 +1,4 @@
+//https://www.codewars.com/kata/54d81488b981293527000c8f
 use std::vec;
 
 fn sum_pairs(ints: &[i8], s: i8) -> Option<(i8, i8)> {

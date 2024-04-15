@@ -1,3 +1,4 @@
+//https://www.codewars.com/kata/5656b6906de340bd1b0000ac
 fn longest(a1: &str, a2: &str) -> String {
     ('a'..='z').filter(|&x| a1.contains(x) || a2.contains(x))
                .collect()

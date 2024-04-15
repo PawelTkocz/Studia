@@ -1,3 +1,4 @@
+//https://www.codewars.com/kata/550498447451fbbd7600041c
 fn comp(a: Vec<i64>, b: Vec<i64>) -> bool {
     if a.len() != b.len(){
         return false;

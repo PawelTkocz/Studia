@@ -1,3 +1,4 @@
+//https://www.codewars.com/kata/5552101f47fc5178b1000050
 fn dig_pow(n: i64, p: i32) -> i64 {
     let l = n.to_string().len();
     let k = n.to_string()

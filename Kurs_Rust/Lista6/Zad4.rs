@@ -1,3 +1,4 @@
+//https://www.codewars.com/kata/59cfc000aeb2844d16000075
 fn capitalize(s: &str) -> Vec<String> {
     let mut str1: Vec<char> = vec![];
     let mut str2: Vec<char> = vec![];

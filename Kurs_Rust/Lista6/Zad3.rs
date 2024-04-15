@@ -1,3 +1,4 @@
+//https://www.codewars.com/kata/526d84b98f428f14a60008da
 use std::cmp::min;
 
 fn find_min(v: &mut Vec<u64>, mini: u64, d: u64) -> u64 {

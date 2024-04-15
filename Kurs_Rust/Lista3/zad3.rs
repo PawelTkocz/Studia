@@ -1,3 +1,4 @@
+//https://www.codewars.com/kata/simple-substitution-cipher-helper
 struct Cipher {
     map1: String,
     map2: String

@@ -1,3 +1,4 @@
+//https://www.codewars.com/kata/5467e4d82edf8bbf40000155
 fn descending_order(x: u64) -> u64 {
     let mut digits = x.clone().
                        to_string().

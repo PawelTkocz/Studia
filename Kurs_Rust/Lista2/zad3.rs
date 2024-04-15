@@ -1,3 +1,4 @@
+//https://www.codewars.com/kata/599c20626bd8795ce900001d
 fn summy(strng: &str) -> i32 {
     strng.split(' ')
          .map(|x| x.parse::<i32>().unwrap())
