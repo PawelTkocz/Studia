@@ -1,0 +1,54 @@
+﻿@model List<BookShop.Models.CartItemViewModel>
+
+@if(@Model.Count == 0)
+{
+    <h1>Twój koszyk jest pusty</h1>
+    <button type="button" class="btn btn-primary" onclick="location.href='@this.Url.Action("Index", "Home")'">Powrót</button>
+}
+else
+{
+    <h1>Zawartość Twojego koszyka:</h1>
+    <table class="table">
+        <thead>
+            <tr>
+              <th scope="col">Okładka</th>
+              <th scope="col">Tytuł</th>
+              <th scope="col">Autor</th>
+              <th scope="col">Liczba sztuk</th>
+              <th scope="col">Cena</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td><img src="@Url.Content("/Images/" + item.PhotoPath)" 
+                             style="object-fit:contain;
+                                        width:200px;
+                                        height:300px;
+                                        border: solid 1px #CCC"/> </td>
+                    <td>@item.Title</td>
+                    <td>@item.Author</td>
+                    <td>@item.Amount</td>
+                    <td>@string.Format("{0:N2}", @item.Price) zł</td>
+                    <td><button type="button" class="btn btn-primary" onclick="location.href='@this.Url.Action("Details", "Home", new {id = item.BookId})'">Edytuj</button></td>
+                    <td><button type="button" class="btn btn-danger" onclick="location.href='@this.Url.Action("DeleteFromCart", "Home", new {id = item.Id})'">Usuń</button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        @{
+            double sum = 0;
+            foreach (var item in Model)
+                sum += item.Price;
+        }
+        <h1>Całkowita wartość zamówienia: @string.Format("{0:N2}", @sum) zł</h1>
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary" onclick="location.href='@this.Url.Action("Index", "Home")'">Powrót</button>
+        <button type="button" class="btn btn-success" onclick="location.href='@this.Url.Action("GetAddress", "Home")'">Dalej</button>
+    </div>   
+}

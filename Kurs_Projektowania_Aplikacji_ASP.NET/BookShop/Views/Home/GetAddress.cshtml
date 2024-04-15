@@ -1,0 +1,27 @@
+﻿@model BookShop.Models.Order.AddressViewModel
+
+<h1>Podaj adres dostawy:</h1>
+<form method="post" action="GetAddress">
+  <div class="mb-3">
+    <label class="form-label">Kraj</label>
+    <input type="text" asp-for="Country">
+    <span asp-validation-for="Country" class="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Miasto</label>
+    <input type="text" asp-for="City">
+    <span asp-validation-for="City" class="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Ulica</label>
+    <input type="text" asp-for="Street">
+    <span asp-validation-for="Street" class="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Numer domu</label>
+    <input type="text" asp-for="StreetNumber">
+    <span asp-validation-for="StreetNumber" class="text-danger"></span>
+  </div>
+  <button type="submit" class="btn btn-primary">Złóż zamówienie</button>
+  <button type="button" class="btn btn-primary" onclick="location.href='@this.Url.Action("SeeCart", "Home")'">Cofnij</button>
+</form>

@@ -1,0 +1,23 @@
+﻿@model BookShop.Models.LoginModel
+
+<h1>Zaloguj się</h1>
+
+<form method="post" action="Login">
+  <div class="mb-3">
+    <label class="form-label">Email</label>
+    <input type="text" asp-for="Email" value=@Model.Email>
+    <span asp-validation-for="Email" class="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Hasło</label>
+    <input type="password" asp-for="Password">
+    <span asp-validation-for="Password" class="text-danger"></span>
+  </div>
+  <button type="submit" class="btn btn-primary">Zaloguj</button>
+  @if (Model.TryAgain)
+  {
+      <div class="mb-3">
+        <label class="form-label">Podano nieprawidłowe hasło lub nazwę użytkownika</label>
+      </div>
+  }
+</form>

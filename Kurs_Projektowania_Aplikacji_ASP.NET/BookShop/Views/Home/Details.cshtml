@@ -1,0 +1,84 @@
+﻿@model BookShop.Models.AddToCartModel
+
+<table class="table">
+    <tbody>
+        <tr>
+             <td><img src="@Url.Content("/Images/" + Model.PhotoPath)" 
+                         style="object-fit:contain;
+                                    width:200px;
+                                    height:300px;
+                                    border: solid 1px #CCC"/> </td>
+             <td>
+                @if (User.Identity != null && User.Identity.IsAuthenticated)
+                {
+                    <form method="post" action="Details">
+                        <div class="mb-3">
+                            <input type="hidden" asp-for="BookId" value=@Model.BookId/>
+                            <input type="hidden" asp-for="Amount" value=@Model.Amount/>
+                            <input type="hidden" asp-for="Author" value=@Model.Author/>
+                            <input type="hidden" asp-for="Description" value=@Model.Description/>
+                            <input type="hidden" asp-for="PhotoPath" value=@Model.PhotoPath/>
+                            <input type="hidden" asp-for="Price" value=@Model.Price/>
+                            <input type="hidden" asp-for="Sites" value=@Model.Sites/>
+                            <input type="hidden" asp-for="Title" value=@Model.Title/>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Liczba zamawianych książek</label>
+                            <input type="number" asp-for="ChosenAmount" id="chosenAmount">
+                            <span asp-validation-for="ChosenAmount" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">(Pozostałych sztuk w magazynie: @Model.Amount)</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="submitButton"></button>
+                    </form>
+                }
+             </td>
+        </tr>
+        <tr>
+            <td>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Tytuł</td>
+                            <td>@Model.Title</td>
+                        </tr>
+                        <tr>
+                            <td>Autor</td>
+                            <td>@Model.Author</td>
+                        </tr>
+                        <tr>
+                            <td>Liczba stron</td>
+                            <td>@Model.Sites</td>
+                        </tr>
+                        <tr>
+                            <td>Cena</td>
+                            <td>@string.Format("{0:N2}", @Model.Price) zł</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+            <td>
+                <div class="mb-3">
+                    <textarea cols="100" rows="8" readonly="true">@Model.Description</textarea> 
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button type="button" class="btn btn-primary" onclick="location.href='@this.Url.Action("Index", "Home")'">Powrót</button>
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function() {
+            document.getElementById('chosenAmount').value = @Model.ChosenAmount;
+            if(@Model.ChosenAmount > 0){
+                document.getElementById('submitButton').textContent = "Zmień ilość";    
+            }
+            else{
+                document.getElementById('submitButton').textContent = "Dodaj do koszyka";
+            }
+        });
+    </script>
+}

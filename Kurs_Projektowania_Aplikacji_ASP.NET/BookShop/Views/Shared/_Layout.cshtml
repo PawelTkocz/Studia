@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookShop</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/BookShop.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                @if(User.Identity != null && User.Identity.IsAuthenticated)
+                {
+                        <ul class="nav navbar-nav">
+                          <li><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BookShop</a></li>
+                          <li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Przeglądaj wszystkie książki</a></li>
+                          <li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SeeCart">Przejdź do koszyka</a></li>
+                          @if (User.IsInRole("Admin"))
+                          {
+                              <li><a class="nav-link text-dark" asp-area="" asp-controller="Book" asp-action="List">Zarządzaj książkami</a></li>
+                              <li><a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="ListAll">Lista zamówień</a></li>
+                              <li><a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="List">Lista użytkowników</a></li>
+                          }
+                          <li>@RenderSection("Search", false)</li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                          <li><label class="nav-link text-dark">@User.Identity.Name</label></li>
+                          <li><a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="List">Moje zamówienia</a></li>
+                          <li><a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Logout">Wyloguj się</a></li>
+                        </ul>
+                }
+                else
+                {
+                        <ul class="nav navbar-nav">
+                          <li><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BookShop</a></li>
+                          <li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Przeglądaj wszystkie książki</a></li>
+                          <li>@RenderSection("Search", false)</li>  
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                          <li><a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Login">Zaloguj się</a></li>
+                          <li><a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Register">Zarejestruj się</a></li>
+                        </ul>
+                }
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

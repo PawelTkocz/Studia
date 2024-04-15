@@ -1,0 +1,52 @@
+﻿@model BookShop.Models.RegisterModel
+
+<h1>Zarejestruj się</h1>
+
+<form method="post" action="Register">
+  <div class="mb-3">
+    <label class="form-label">Imię</label>
+    <input type="text" asp-for="FirstName">
+    <span asp-validation-for="FirstName" class="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Nazwisko</label>
+    <input type="text" asp-for="LastName">
+    <span asp-validation-for="LastName" class="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Email</label>
+    <input type="email" asp-for="Email">
+    <span asp-validation-for="Email" class="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Hasło</label>
+    <input type="password" asp-for="Password">
+    <span asp-validation-for="Password" class="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Powtórz hasło</label>
+    <input type="password" asp-for="RepeatedPassword">
+    <span asp-validation-for="RepeatedPassword" class="text-danger"></span>
+  </div>
+  <button type="submit" class="btn btn-primary">Zarejestruj</button>
+  @if (Model.EmailUsed)
+  {
+      <div class="mb-3">
+        <label class="form-label">Ten email jest już zajęty</label>
+      </div>
+  }
+ @if (Model.DifferentPasswords)
+  {
+      <div class="mb-3">
+        <label class="form-label">Podane hasła są różne</label>
+      </div>
+  }
+ @if (Model.PasswordTooShort)
+  {
+      <div class="mb-3">
+        <label class="form-label">Hasło musi zawierać co najmniej 6 znaków</label>
+      </div>
+  }
+  
+</form>
+

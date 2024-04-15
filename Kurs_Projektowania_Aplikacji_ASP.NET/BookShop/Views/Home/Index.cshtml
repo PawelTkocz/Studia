@@ -1,0 +1,35 @@
+﻿@model List<BookShop.Models.BookModel>
+<table class="table">
+    <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Tytuł</th>
+          <th scope="col">Autor</th>
+          <th scope="col"></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td><img src="@Url.Content("/Images/" + book.PhotoPath)" 
+                         style="object-fit:contain;
+                                    width:200px;
+                                    height:300px;
+                                    border: solid 1px #CCC"/> </td>
+                <td>@book.Title</td>
+                <td>@book.Author</td>
+                <td><button type="button" class="btn btn-primary" onclick="location.href='@this.Url.Action("Details", "Home", new {id = book.Id})'">Szczegóły</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Search{
+<form method="post" action="@Url.Action("Search", "Home")">
+  <div class="mb-3">
+    <input type="text" placeholder="Wyszukaj..." name="s">
+  </div>
+</form>
+}

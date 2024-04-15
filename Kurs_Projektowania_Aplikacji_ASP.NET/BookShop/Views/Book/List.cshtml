@@ -1,0 +1,38 @@
+﻿@model List<BookShop.Models.BookModel>
+
+<h1>Lista książek w ofercie</h1>
+<button type="button" class="btn btn-primary" onclick="location.href='@this.Url.Action("Add", "Book")'">Dodaj nową książkę</button>
+
+<table class="table">
+    <thead>
+        <tr>
+          <th scope="col">Okładka</th>
+          <th scope="col">Tytuł</th>
+          <th scope="col">Autor</th>
+          <th scope="col">Pozostałych sztuk</th>
+          <th scope="col">Cena</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td><img src="@Url.Content("/Images/" + book.PhotoPath)" 
+                         style="object-fit:contain;
+                                    width:200px;
+                                    height:300px;
+                                    border: solid 1px #CCC"/> </td>
+                <td>@book.Title</td>
+                <td>@book.Author</td>
+                <td>@book.Amount</td>
+                <td>@string.Format("{0:N2}", @book.Price) zł</td>
+                <td><button type="button" class="btn btn-info" onclick="location.href='@this.Url.Action("Details", "Book", new {id = book.Id})'">Szczegóły</button></td>
+                <td><button type="button" class="btn btn-primary" onclick="location.href='@this.Url.Action("Edit", "Book", new {id = book.Id})'">Edytuj</button></td>
+                <td><button type="button" class="btn btn-danger" onclick="location.href='@this.Url.Action("Delete", "Book", new {id = book.Id})'">Usuń</button></td>
+            </tr>
+        }
+    </tbody>
+</table>

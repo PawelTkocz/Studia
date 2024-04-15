@@ -1,0 +1,30 @@
+﻿@model List<BookShop.Models.CartItemViewModel>
+
+<h2>Niektóre książki nie są dostępne w wybranych ilościach</h2>
+<h2>Zmień w koszyku liczbę egzemplarzy poniższych książek, aby dokonać zamówienia:</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Okładka</th>
+            <th scope="col">Tytuł</th>
+            <th scope="col">Autor</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td><img src="@Url.Content("/Images/" + item.PhotoPath)" 
+                            style="object-fit:contain;
+                                    width:200px;
+                                    height:300px;
+                                    border: solid 1px #CCC"/> </td>
+                <td>@item.Title</td>
+                <td>@item.Author</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <button type="button" class="btn btn-primary" onclick="location.href='@this.Url.Action("SeeCart", "Home")'">Powrót do koszyka</button>
+</div>   

@@ -1,0 +1,51 @@
+﻿@model BookShop.Models.BookModel
+
+<table class="table">
+    <tbody>
+        <tr>
+            <td>
+                <table>
+                    <tbody>
+                        <tr>
+                            <img src="@Url.Content("/Images/" + Model.PhotoPath)" 
+                                style="object-fit:contain;
+                                    width:200px;
+                                    height:300px;
+                                    border: solid 1px #CCC"/>            
+                        </tr>
+                        <tr>
+                            <td>Tytuł</td>
+                            <td>@Model.Title</td>
+                        </tr>
+                        <tr>
+                            <td>Autor</td>
+                            <td>@Model.Author</td>
+                        </tr>
+                        <tr>
+                            <td>Liczba stron</td>
+                            <td>@Model.Sites</td>
+                        </tr>
+                        <tr>
+                            <td>Ilość dostępnych sztuk</td>
+                            <td>@Model.Amount</td>
+                        </tr>
+                        <tr>
+                            <td>Cena</td>
+                            <td>@string.Format("{0:N2}", @Model.Price) zł</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+            <td>
+                <div class="mb-3">
+                    <textarea cols="100" rows="15" readonly="true">@Model.Description</textarea> 
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Opis</label>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<button type="button" class="btn btn-primary" onclick="location.href='@this.Url.Action("List", "Book")'">Powrót</button>

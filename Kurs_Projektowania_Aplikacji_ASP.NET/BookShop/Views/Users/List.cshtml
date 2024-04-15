@@ -1,0 +1,32 @@
+﻿@model List<BookShop.Models.UserModel>
+
+<table class="table">
+    <thead>
+        <tr>
+          <th scope="col">Imię</th>
+          <th scope="col">Nazwisko</th>
+          <th scope="col">Email</th>
+          <th scope="col">Czy jest Adminem</th>
+          <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.FirstName</td>
+                <td>@user.LastName</td>
+                <td>@user.Email</td>
+                @if(@user.IsAdmin){
+                    <td>Tak</td>
+                    <td></td>
+                }
+                else
+                {
+                    <td>Nie</td>
+                    <td><button type="button" class="btn btn-primary" onclick="location.href='@this.Url.Action("MakeAdmin", "Users", new {UserId = @user.Id})'">Przyznaj uprawnienia Admina</button></td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

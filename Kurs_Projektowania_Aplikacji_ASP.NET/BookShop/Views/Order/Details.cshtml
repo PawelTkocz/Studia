@@ -1,0 +1,48 @@
+﻿@model BookShop.Models.Order.OrderDetailsViewModel
+
+<h1>Szczegóły zamówienia:</h1>
+
+<div>
+    <label>Data: @Model.Date</label>
+</div>
+<div>
+    <label>Adres: @Model.Country, @Model.City, ul. @Model.Street @Model.StreetNumber</label>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+          <th scope="col">Okładka</th>
+          <th scope="col">Tytuł</th>
+          <th scope="col">Autor</th>
+          <th scope="col">Liczba sztuk</th>
+          <th scope="col">Cena</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Items)
+        {
+            <tr>
+                <td><img src="@Url.Content("/Images/" + item.PhotoPath)" 
+                         style="object-fit:contain;
+                                    width:200px;
+                                    height:300px;
+                                    border: solid 1px #CCC"/> </td>
+                <td>@item.Title</td>
+                <td>@item.Author</td>
+                <td>@item.Amount</td>
+                <td>@string.Format("{0:N2}", @item.Price) zł</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    @{
+        double sum = 0;
+        foreach (var item in Model.Items)
+            sum += item.Price;
+    }
+    <h1>Całkowita wartość zamówienia: @string.Format("{0:N2}", @sum) zł</h1>
+</div>
+<td><button type="button" class="btn btn-primary" onclick="location.href='@this.Url.Action("List", "Order")'">Powrót</button></td>
+
+

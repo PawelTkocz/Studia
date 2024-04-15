@@ -1,0 +1,76 @@
+﻿@model BookShop.Models.EditBookViewModel
+
+<h1>Edytuj książkę</h1>
+
+<form method="post" action="Edit" enctype="multipart/form-data">
+    <input type="hidden" asp-for="BookId" value=@Model.BookId/>
+    <input type="hidden" asp-for="PhotoPath" value=@Model.PhotoPath/>
+    <table class="table">
+        <tbody>
+            <tr>
+                <td>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Tytuł</td>
+                                <td><input type="text" asp-for="Title"></td>
+                            </tr>
+                            <tr>
+                                <td><span asp-validation-for="Title" class="text-danger"></span></td>
+                            </tr>
+                            <tr>
+                                <td>Autor</td>
+                                <td><input type="text" asp-for="Author"></td>
+                            </tr>
+                            <tr>
+                                <td><span asp-validation-for="Author" class="text-danger"></span></td>
+                            </tr>
+                            <tr>
+                                <td>Liczba stron</td>
+                                <td><input type="number" asp-for="Sites"></td>
+                            </tr>
+                            <tr>
+                                <td><span asp-validation-for="Sites" class="text-danger"></span></td>
+                            </tr>
+                            <tr>
+                                <td>Ilość dostępnych sztuk</td>
+                                <td><input type="number" asp-for="Amount"></td>
+                            </tr>
+                            <tr>
+                                <td><span asp-validation-for="Amount" class="text-danger"></span></td>
+                            </tr>
+                            <tr>
+                                <td>Cena</td>
+                                <td><input type="text" asp-for="Price"></td>
+                            </tr>
+                            <tr>
+                                <td><span asp-validation-for="Price" class="text-danger"></span></td>
+                            </tr>
+                            <tr>
+                                <td>Zdjęcie okładki</td>
+                                <td><input type="file" asp-for="Photo" class="form-control"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>
+                    <div class="mb-3">
+                        <textarea asp-for="Description" cols="100" rows="15"></textarea> 
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Opis</label>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    @if (Model.RepeatedBook)
+    {
+        <div class="mb-3">
+            <label class="form-label">Książka o tym tytule i autorze już jest w bazie</label>
+        </div>
+    }
+    <button type="submit" class="btn btn-primary">Zapisz</button>
+    <button type="button" class="btn btn-primary" onclick="location.href='@this.Url.Action("List", "Book")'">Anuluj</button>
+</form>
