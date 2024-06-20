@@ -1,0 +1,1 @@
+bool send_response(int client_fd,  RequestParameters_t *requestParameters, char *directory);

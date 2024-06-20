@@ -1,0 +1,1 @@
+bool serve_client(int client_sock_fd, int max_connection_time, char *directory);
